@@ -1,15 +1,23 @@
 {
   "name": "angular-auth-oidc-client",
   "author": "Damien Bowden & Fabian Gosebrink",
+  "license": "MIT",
+  "version": "14.1.5-build15",
+  "description": "Angular Lib for OpenID Connect & OAuth2",
+  "schematics": "./schematics/collection.json",
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "package": "npm install && npm run build && cd /home/jjn/dist/angular-auth-oidc-client && npm pack"
+  },
   "peerDependencies": {
-    "rxjs": "^6.5.3 || ^7.4.0",
-    "@angular/core": ">=13.0.0",
     "@angular/common": ">=13.0.0",
-    "@angular/router": ">=13.0.0"
+    "@angular/core": ">=13.0.0",
+    "@angular/router": ">=13.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
-    "rfc4648": "^1.5.0"
+    "rfc4648": "^1.5.0",
+    "tslib": "^2.3.0"
   },
   "repository": {
     "type": "git",
@@ -35,11 +43,11 @@
     "oauth",
     "authorization"
   ],
-  "license": "MIT",
-  "version": "14.1.5",
-  "description": "Angular Lib for OpenID Connect & OAuth2",
-  "schematics": "./schematics/collection.json",
+  
   "ng-add": {
     "save": "dependencies"
+  },
+  "devDependencies": {
+    "ng-packagr": "^14.2.1"
   }
 }

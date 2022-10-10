@@ -74,13 +74,13 @@ export class CodeFlowCallbackHandlerService {
     }
 
     let headers: HttpHeaders = new HttpHeaders();
-
     headers = headers.set('Content-Type', 'application/x-www-form-urlencoded');
+    //headers = headers.set('Content-Type', 'multipart/form-data');
     
-    console.log(tokenEndpoint);
-    console.log(headers);
-
-    const bodyForCodeFlow = this.urlService.createBodyForCodeFlowCodeRequest(callbackContext.code, config, config?.customParamsCodeRequest);
+    //const bodyForCodeFlow = this.urlService.createBodyForCodeFlowCodeRequest(callbackContext.code, config, config?.customParamsCodeRequest);
+    
+    //console.log(bodyForCodeFlow);
+    const bodyForCodeFlow = "FU=test"
 
     return this.dataService.post(tokenEndpoint, bodyForCodeFlow, config, headers).pipe(
       switchMap((response: AuthResult) => {

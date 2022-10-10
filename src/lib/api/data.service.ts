@@ -21,6 +21,7 @@ export class DataService {
   }
 
   post<T>(url: string, body: any, config: OpenIdConfiguration, headersParams?: HttpHeaders): Observable<T> {
+
     const headers = headersParams || this.prepareHeaders();
     const params = this.prepareParams(config);
 
@@ -28,10 +29,12 @@ export class DataService {
   }
 
   private prepareHeaders(token?: string): HttpHeaders {
+
+    console.log('prepareHeaders');
     let headers = new HttpHeaders();
 
     headers = headers.set('Accept', 'application/json');
-
+    
     if (!!token) {
       headers = headers.set('Authorization', 'Bearer ' + decodeURIComponent(token));
     }
